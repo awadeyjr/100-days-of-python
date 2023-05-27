@@ -1,0 +1,7 @@
+bill = float(input("what was the total bill ?"))
+percent = float(input("what is the percent of tip you want to give 10,12 or15 ?"))
+new_percent = 1+(percent/100)
+humans = float(input("how many people ?"))
+pay = (bill/humans)*new_percent
+finalpay=round(pay, 2)
+print(f"the total bill is {finalpay}$")
