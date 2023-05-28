@@ -1,0 +1,50 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+import random
+
+bank = [rock, paper, scissors]
+
+input_seed = int(input("What do you choose? Type 0 for rock, 1 for paper, and 2 for scissors: "))
+
+if input_seed < 0 or input_seed >= 3:
+    print("Invalid input")
+else:
+    random.seed(input_seed)
+
+    print(bank[input_seed])
+
+    computer_choice = random.randint(0, 2)
+    print(f"Computer choice:\n{bank[computer_choice]}")
+
+    if (computer_choice == 0 and input_seed == 2) or (computer_choice == 2 and input_seed == 0):
+        print("You lose")
+    elif computer_choice > input_seed:
+        print("You lose")
+    elif computer_choice < input_seed:
+        print("You win")
+    else:
+        print("Draw")
