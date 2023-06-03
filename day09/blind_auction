@@ -1,0 +1,22 @@
+from replit import clear
+from art import logo
+print(logo)
+end_game = False
+bidding ={}
+while not end_game:
+  key = input("What is your name ? ")
+  value = int(input("What is the bid price ? "))
+  bidding[key]= value
+  answer = input("Are there any other bidders? Type 'yes' or 'no'")
+  if answer == "yes":
+    clear()
+    continue
+  elif answer ==  "no":
+    highest_bid = 0
+    for key in bidding:
+      if bidding[key] >= highest_bid:
+        highest_bid = bidding[key]
+      elif bidding[key] < highest_bid:
+        continue
+    print(f"The winner is Elon with a bid of{highest_bid}")
+    end_game = True
